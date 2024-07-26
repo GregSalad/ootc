@@ -10,19 +10,17 @@
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>    
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
 </head>
 <body>
-
 
     <section class="w-full h-auto relative">
         <div class="container mx-auto px-6 py-10">
 
-
             <div class="w-full grid grid-cols-1 lg:grid-cols-2">
               <!-- Video -->
               <div class="w-full aspect-video overflow-hidden">
-                <video muted loop autoplay class="size-full object-cover block" src="https://player.vimeo.com/progressive_redirect/playback/990615816/rendition/540p/file.mp4?loc=external&log_user=0&signature=155dc70e2f92ded95c7c90f4dc916581e627a2de8d178080e978a38d893410d1"></video>
+                <video id="myVideo" muted loop autoplay class="size-full object-cover block" src="https://player.vimeo.com/progressive_redirect/playback/990615816/rendition/540p/file.mp4?loc=external&log_user=0&signature=155dc70e2f92ded95c7c90f4dc916581e627a2de8d178080e978a38d893410d1"></video>
               </div>
 
               <!-- Swiper -->
@@ -70,32 +68,23 @@
                 </div> 
                </div>
             </div>
-
-
-
- 
         </div>
     </section>
-
-
-
-
-
   
   <script>
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  effect: "fade",
-  speed:1000,
-  loop: true,
-  allowTouchMove: false,
-  autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-
-});
-
+    document.getElementById('myVideo').addEventListener('loadeddata', function() {
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        effect: "fade",
+        speed:1000,
+        loop: true,
+        allowTouchMove: false,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+      });
+    });
   </script>
     
 </body>
